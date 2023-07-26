@@ -59,6 +59,16 @@ const HomeNavigator = () =>{
                             iconStyle={styles.stackIcon}
                             onPress={() => navigation.toggleDrawer()}
                         />
+                    ),
+                    headerRight: () => (
+                        <Image
+                        
+                            style={styles.smallLogo}
+                            source={require('../assets/dogimages/corgi.png')}
+                        
+                        />
+
+                        
                     )
                 
                 })}
@@ -118,7 +128,7 @@ const CustomDrawer = (props) => (
     <DrawerContentScrollView {...props}>
         <View style={styles.drawerHeader}>
             <View style={{flex:1}}>
-                <Image source={logo} style={styles.drawerImage}/>
+                <Image source={require('../assets/dogimages/AustDog.png')} style={styles.drawerImage}/>
             </View>
             <View style={{flex:2}}>
                 <Text style={styles.drawerHeaderText}>Herding Wikia</Text>
@@ -211,6 +221,10 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         color: '#fff',
         fontSize: 24
+    },
+    smallLogo: {
+        width: 50,
+        height: 50
     },
     drawerHeader: {
         backgroundColor: "#33ccff",

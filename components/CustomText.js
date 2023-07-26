@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 import React, {useState, useEffect} from 'react';
 
 const CustomFont = (props) => {
-    const [fontLoaded, setFontLoaded] = useState(false);
+    
 
     useEffect(() => {
         async function loadFont() {

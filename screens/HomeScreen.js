@@ -54,7 +54,20 @@ const HomeScreen = () => {
         //Lazy loading will only load a part of the list at a time.
         //Which are things that are on the screen or about to be on the screen.
         //Things off screen will be expunged from the memory for better and effiecient loading.
-        <ScrollView>
+        <ScrollView >
+
+            <Card>
+                <Card.Title>Welcome To Herding Wikia!</Card.Title>
+                <Card.Divider></Card.Divider>
+                <Card.Image source={require('../assets/logos/png/logo-color.png')} style={{borderRadius: 4, padding: 5}}/>
+                <Text>
+                    Hello! Welcome to the Herding Wikia and small 
+                    site for your informational needs on canines that 
+                    herd by day and guard by night! Take a look around why dontcha!
+                </Text>
+            </Card>
+
+
             <FeaturedItem item={featPartners} />
             <FeaturedItem item={featCampsites} />
             <FeaturedItem item={featPromotions} />

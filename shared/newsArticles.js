@@ -1,3 +1,5 @@
+
+
 export const PROMOTIONS = [
     {
         id: 0,
@@ -7,4 +9,15 @@ export const PROMOTIONS = [
         description:
             'Book a 5-day mountain trek with a seasoned outdoor guide! Fly fishing equipment and lessons provided.',
     },
+];
+
+export const ARTICLE = [
+    {
+        id: 0,
+        name: 'Livestock and Your Puppy? Not Yet',
+        image: require("../assets/images/FarmPuppy.jpg"),
+        featured: true,
+        description: "A short and sweet statment on what to do when ",
+        author: "Lacey Herbel"
+    }
 ];

@@ -1,3 +1,10 @@
+export const FACTS = [
+    {
+        id: 0,
+    }
+]
+
+
 export const PARTNERS = [
     {
         id: 0,
