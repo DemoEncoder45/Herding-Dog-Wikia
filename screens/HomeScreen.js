@@ -3,7 +3,7 @@ import {PARTNERS} from "../shared/facts"
 import { Card } from 'react-native-elements'
 import { CAMPSITES } from '../shared/campsites'
 import { PROMOTIONS } from '../shared/newsArticles'
-import {ScrollView, Text, View} from 'react-native'
+import {ScrollView, StyleSheet, Text, View} from 'react-native'
 
 const FeaturedItem = ({item}) => {
     if (item) {
@@ -58,13 +58,23 @@ const HomeScreen = () => {
 
             <Card>
                 <Card.Title>Welcome To Herding Wikia!</Card.Title>
-                <Card.Divider></Card.Divider>
+                <Card.Divider/>
                 <Card.Image source={require('../assets/logos/png/logo-color.png')} style={{borderRadius: 4, padding: 5}}/>
-                <Text>
+                <Text style={styles.cardStyle}>
                     Hello! Welcome to the Herding Wikia and small 
                     site for your informational needs on canines that 
                     herd by day and guard by night! Take a look around why dontcha!
                 </Text>
+            </Card>
+
+            <Card>
+                <Card.Title>Featured Article</Card.Title>
+                <Card.Divider/>
+            </Card>
+
+            <Card>
+                <Card.Title>Pooch of The Month</Card.Title>
+                <Card.Divider/>
             </Card>
 
 
@@ -74,5 +84,12 @@ const HomeScreen = () => {
         </ScrollView>
     )
 }
+
+const styles = StyleSheet.create({
+    cardStyle: {
+        margin: 5,
+        flex: 1
+    }
+})
 
 export default HomeScreen

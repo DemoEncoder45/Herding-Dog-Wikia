@@ -15,7 +15,7 @@ export const ARTICLE = [
     {
         id: 0,
         name: 'Livestock and Your Puppy? Not Yet',
-        image: require("../assets/images/FarmPuppy.jpg"),
+        image: require("../assets/dogimages/FarmPuppy.jpg"),
         featured: true,
         description: "A short and sweet statment on what to do when ",
         author: "Lacey Herbel"

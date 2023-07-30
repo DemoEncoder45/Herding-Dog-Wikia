@@ -36,6 +36,10 @@ const screenOptions = {
     headerTintColor: "#ffffff"
 }
 
+const drawerScreenOptions = {
+   fontFamily: 'GoodDog'
+}
+
 const HomeNavigator = () =>{
     const Stack = createStackNavigator();
 
@@ -131,7 +135,7 @@ const CustomDrawer = (props) => (
                 <Image source={require('../assets/dogimages/AustDog.png')} style={styles.drawerImage}/>
             </View>
             <View style={{flex:2}}>
-                <Text style={styles.drawerHeaderText}>Herding Wikia</Text>
+                <Text style={{color: '#ffcc99', fontSize: 25, fontWeight:'bold'}}>Herding Wikia</Text>
             </View>
         </View>
         <DrawerItemList {...props} labelStyle={{fontWeight: "bold"}}/>
@@ -144,6 +148,7 @@ const Main = () => {
 
     
     const[fontsLoaded] = useFonts(customFonts);
+    console.log(fontsLoaded)
 
     if(!fontsLoaded){
         return null;
@@ -175,10 +180,12 @@ const Main = () => {
                 initialRouteName="Home"
                 drawerContent={CustomDrawer}
                 drawerStyle={{backgroundColor: '#CEC8FF'}}
+                drawerType='slide'
             >
                 <Drawer.Screen
                     name="Home"
                     component={HomeNavigator}
+                    screenOptions={drawerScreenOptions}
                     options={{
                         title: "Home",
                         drawerIcon: ({ color}) => (
@@ -236,7 +243,7 @@ const styles = StyleSheet.create({
     },
     drawerHeaderText: {
         color: '#ffcc99',
-        fontSize: 24,
+        fontSize: 25,
         fontWeight:'bold'
     },
     drawerImage: {
