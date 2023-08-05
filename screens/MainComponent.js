@@ -66,10 +66,8 @@ const HomeNavigator = () =>{
                     ),
                     headerRight: () => (
                         <Image
-                        
                             style={styles.smallLogo}
                             source={require('../assets/dogimages/corgi.png')}
-                        
                         />
 
                         
@@ -159,22 +157,7 @@ const Main = () => {
         
         //This will fill the vertical width of the screen
         <View style={{flex: 1, paddingTop: Platform.OS === "ios" ? 0 : Constants.statusBarHeight}}>
-            {/* <DirectoryScreen 
-            
-            campsites={campsites}
-            onPress={(campsiteId) => setSelectedCampsiteId(campsiteId)}
-            />
-            
-            <DogInfoScreen
-                campsite={
-                    //We use the filter method since we are using an array of info;
-                    //the method will filter out only the campsite that only user has selected
-                    //we filter out the campsite with the matching campsite id to the campsite id that is selected
-                    campsites.filter(
-                        (campsite) => campsite.id === selectedCampsiteId
-                    )[0]
-                }
-            /> */}
+           
 
             <Drawer.Navigator
                 initialRouteName="Home"

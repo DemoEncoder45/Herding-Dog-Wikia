@@ -17,7 +17,8 @@ export const ARTICLE = [
         name: 'Livestock and Your Puppy? Not Yet',
         image: require("../assets/dogimages/FarmPuppy.jpg"),
         featured: true,
-        description: "A short and sweet statment on what to do when ",
+        description: "A short and sweet article on what to do when adding a new little one to the family! From house training to traveling, check it out! ",
+        articleTitle: 'Livestock and Your Puppy? Not Yet',
         author: "Lacey Herbel"
     }
 ];

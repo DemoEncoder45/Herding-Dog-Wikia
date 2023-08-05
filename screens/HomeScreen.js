@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import {PARTNERS} from "../shared/facts"
 import { Card } from 'react-native-elements'
+import {ARTICLE} from '../shared/newsArticles'
 import { CAMPSITES } from '../shared/campsites'
 import { PROMOTIONS } from '../shared/newsArticles'
-import {ScrollView, StyleSheet, Text, View} from 'react-native'
+import {TouchableOpacity, ScrollView, StyleSheet, Linking, Text, View} from 'react-native'
+
 
 const FeaturedItem = ({item}) => {
     if (item) {
@@ -18,9 +20,7 @@ const FeaturedItem = ({item}) => {
                             textAlign: 'center',
                             fontSize: 20
                         }}
-                        
                         >
-
                             {item.name}
                         </Text>
                     </View>
@@ -34,6 +34,30 @@ const FeaturedItem = ({item}) => {
     return <View/>
 }
 
+const FeaturedArticle = ({article}) => {
+    if (article) {
+        return (
+            <Card containerStyle={{padding:1, borderRadius: 10}}>
+
+                <View style={{alignItems:'center'}}>
+                    <Text style={{fontFamily:'Underdog-Regular', fontSize: 18, margin: 5}}>Featured Article</Text>
+                </View>
+
+                <Card.Divider/>
+
+                <TouchableOpacity>
+                    <Card.Image containerStyle={{borderRadius: 5, padding: 0, marginLeft: 10, marginRight: 10}} source={article.image} onPress={() => Linking.openURL('https://www.akc.org/sports/herding/articles/livestock-and-your-puppy/')} />
+                </TouchableOpacity>
+                <Text style={styles.cardTextHeader}>{article.articleTitle} </Text>
+
+                <Text style={{fontFamily: 'GoodDog', textAlign:'center'}}>{article.description}</Text>
+
+            </Card>
+        )
+    }
+    return <View/>
+}
+
 
 const HomeScreen = () => {
 
@@ -41,11 +65,12 @@ const HomeScreen = () => {
     //renders.
     const [partners, setPartners] = useState(PARTNERS)
     const [campsites, setCampsites] = useState(CAMPSITES);
-    const [promotions, setPromotions] = useState(PROMOTIONS);
+    const [articles, setArticles] = useState(ARTICLE)
 
-    const featPromotions = promotions.find((item) => item.featured)
+
     const featCampsites = campsites.find((item) => item.featured)
     const featPartners = partners.find((item) => item.featured)
+    const featArticles = articles.find((article) => article.featured)
 
 
     return (
@@ -56,7 +81,7 @@ const HomeScreen = () => {
         //Things off screen will be expunged from the memory for better and effiecient loading.
         <ScrollView >
 
-            <Card>
+            <Card >
                 <Card.Title>Welcome To Herding Wikia!</Card.Title>
                 <Card.Divider/>
                 <Card.Image source={require('../assets/logos/png/logo-color.png')} style={{borderRadius: 4, padding: 5}}/>
@@ -67,20 +92,18 @@ const HomeScreen = () => {
                 </Text>
             </Card>
 
+            <FeaturedArticle article={featArticles}/>
+
             <Card>
-                <Card.Title>Featured Article</Card.Title>
+                <Card.Title style={styles.cardHeader}>Pooch of The Month</Card.Title>
                 <Card.Divider/>
             </Card>
 
-            <Card>
-                <Card.Title>Pooch of The Month</Card.Title>
-                <Card.Divider/>
-            </Card>
-
-
+            
             <FeaturedItem item={featPartners} />
             <FeaturedItem item={featCampsites} />
-            <FeaturedItem item={featPromotions} />
+            
+            
         </ScrollView>
     )
 }
@@ -88,7 +111,18 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
     cardStyle: {
         margin: 5,
-        flex: 1
+        flex: 1,
+        fontFamily: 'GoodDog'
+    },
+    cardHeader: {
+        fontFamily: 'GoodDog'
+    },
+    cardTextHeader: {
+        padding: 0,
+        margin: 5 ,
+        flex: 1,
+        textAlign: 'center',
+        fontFamily: 'Underdog-Regular'
     }
 })
 
