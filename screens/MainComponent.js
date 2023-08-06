@@ -119,6 +119,7 @@ const DirectoryNavigator = () => {
                 //This will set the campsite name of every specific campsite
                 //This will work because in the InfoScreen a navagtion param called campsite
                 //with a name to the campsite that we are navagting to.
+                
             
             />
         </Stack.Navigator>
