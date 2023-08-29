@@ -67,7 +67,7 @@ const HomeNavigator = () =>{
                     headerRight: () => (
                         <Image
                             style={styles.smallLogo}
-                            source={require('../assets/dogimages/corgi.png')}
+                            source={require('../assets/dogimages/corgiPics/corgi.png')}
                         />
 
                         
@@ -131,7 +131,7 @@ const CustomDrawer = (props) => (
     <DrawerContentScrollView {...props}>
         <View style={styles.drawerHeader}>
             <View style={{flex:1}}>
-                <Image source={require('../assets/dogimages/AustDog.png')} style={styles.drawerImage}/>
+                <Image source={require('../assets/dogimages/blueHeelerPics/AustDog.png')} style={styles.drawerImage}/>
             </View>
             <View style={{flex:2}}>
                 <Text style={{color: '#ffcc99', fontSize: 25, fontWeight:'bold'}}>Herding Wikia</Text>

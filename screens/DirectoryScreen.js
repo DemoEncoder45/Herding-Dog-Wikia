@@ -1,7 +1,8 @@
 import { useState } from "react";
 import {CAMPSITES} from '../shared/campsites'
+import {DOGS} from '../shared/dogs'
 import { FlatList } from "react-native";
-import { Avatar, ListItem } from "react-native-elements";
+import { Avatar, ListItem, Tile } from "react-native-elements";
 
 const DirectoryScreen = ({navigation}) => {
 
@@ -14,7 +15,7 @@ const DirectoryScreen = ({navigation}) => {
     //are using campsite data
     const renderDirectoryItem = ({item: campsite}) => {
         return (
-            //the navigate methid helps use the navigation parameter and allows us to
+            //the navigate method helps use the navigation parameter and allows us to
             //navigate throguht the different screens, the first argument sends us to the screen
             //we want to go to (WHich must be named the exact same as the screen where the data is being sent
             //)and the second argument sends over any additional data.
@@ -32,6 +33,20 @@ const DirectoryScreen = ({navigation}) => {
         )
     } 
 
+    const renderDogItem = ({item: campsite}) => {
+
+        return (
+        <ListItem onPress={() => navigation.navigate('Dogs', {campsite})}>
+            <Tile
+                imageSrc={campsite.image}
+                title={campsite.name}
+                featured
+                caption={campsite.description}
+            />
+        </ListItem>
+        )
+    }
+
 
 
     return(
@@ -39,9 +54,11 @@ const DirectoryScreen = ({navigation}) => {
             //We change "props.campsites" to just the campsites state variable
             //Because we are no longer getting any campsite data through props.
             data={campsites}
-            renderItem={renderDirectoryItem}
+            renderItem={renderDogItem}
             keyExtractor={(item) => item.id.toString()}
         />
+        
+        
     )
 }
 

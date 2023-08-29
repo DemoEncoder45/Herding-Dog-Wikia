@@ -97,6 +97,9 @@ const HomeScreen = () => {
             <Card>
                 <Card.Title style={styles.cardHeader}>Pooch of The Month</Card.Title>
                 <Card.Divider/>
+
+                <Card.Image source={require('../assets/dogimages/corgiPics/smashedCorgi.png')}/>
+                
             </Card>
 
             
